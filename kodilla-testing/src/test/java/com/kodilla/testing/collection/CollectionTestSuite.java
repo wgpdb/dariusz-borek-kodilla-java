@@ -31,11 +31,11 @@ public class CollectionTestSuite {
         OddNumbersExterminator one = new OddNumbersExterminator(emptyList);
 
         // When
-        boolean result = one.getNumbers().isEmpty();
+        int result = one.getNumbers().size();
         System.out.println("Testing list if empty " + result);
 
         // Then
-        Assertions.assertTrue(result);
+        Assertions.assertEquals(0, result);
     }
 
     @DisplayName(
@@ -69,10 +69,10 @@ public class CollectionTestSuite {
         // Given
         List<Integer> oddAndEvenList = Arrays.asList(2, 5, 8, 9, 12, 15);
         OddNumbersExterminator one = new OddNumbersExterminator(oddAndEvenList);
-        one.exterminate(oddAndEvenList);
+        one.exterminate();
 
         // When
-        List<Integer> result = one.getEvenNumbers();
+        List<Integer> result = one.exterminate();
         System.out.println("Testing if list has only even Integers " + result);
 
         // Then

@@ -5,7 +5,6 @@ import java.util.*;
 public class OddNumbersExterminator {
 
     private List<Integer> numbers;
-    private List<Integer> evenNumbers = new ArrayList<>();
 
     public OddNumbersExterminator(List<Integer> numbers) {
         this.numbers = numbers;
@@ -15,11 +14,9 @@ public class OddNumbersExterminator {
         return numbers;
     }
 
-    public List<Integer> getEvenNumbers() {
-        return evenNumbers;
-    }
+    public List<Integer> exterminate() {
 
-    public List<Integer> exterminate(List<Integer> numbers) {
+        List<Integer> evenNumbers = new ArrayList<>();
 
         for (Integer number : numbers) {
             if (number % 2 == 0) {
