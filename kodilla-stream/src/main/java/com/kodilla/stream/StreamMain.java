@@ -1,6 +1,7 @@
 package com.kodilla.stream;
 
 import com.kodilla.stream.beautifier.PoemBeautifier;
+import com.kodilla.stream.iterate.NumbersGenerator;
 import com.kodilla.stream.lambda.*;
 import com.kodilla.stream.reference.FunctionalCalculator;
 
@@ -49,5 +50,9 @@ public class StreamMain {
         poemBeautifier.decorate("This is a poem...", PoemBeautifier::toUpperCase);
         poemBeautifier.decorate("THIS IS A POEM...", PoemBeautifier::toLowerCase);
         poemBeautifier.decorate("This is a poem...", (String poem) -> "\ud83c\udf40 " + poem + " \ud83c\udf40");
+
+        //Stream
+        System.out.println("Using Stream to generate even numbers from 1 to 20");
+        NumbersGenerator.generateEven(20);
     }
 }
