@@ -105,15 +105,14 @@ public class ForumStatisticsTestSuite {
         //Given
         StatisticsCalculator statCalc = new StatisticsCalculator(statisticsMock);
 
-        //when(statisticsMock.usersNames()).thenReturn(generateListOfNUserNames(100));
-        when(statisticsMock.postsCount()).thenReturn(1000);
+        when(statisticsMock.usersNames()).thenReturn(generateListOfNUserNames(100));
 
         //When
         statCalc.calculateAdvStatistics(statisticsMock);
 
         //Then
-        assertEquals(0, statCalc.getUserCount());
-        assertEquals(1000, statCalc.getPostsCount());
+        assertEquals(100, statCalc.getUserCount());
+        assertEquals(0, statCalc.getPostsCount());
         assertEquals(0, statCalc.getCommentsCount());
         assertEquals(0, statCalc.getAveragePostsPerUser());
         assertEquals(0, statCalc.getAverageCommentsPerUser());
