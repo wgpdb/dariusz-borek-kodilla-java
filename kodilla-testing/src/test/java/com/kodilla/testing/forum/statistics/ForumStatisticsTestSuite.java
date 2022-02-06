@@ -9,7 +9,6 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 import java.util.ArrayList;
@@ -51,7 +50,6 @@ public class ForumStatisticsTestSuite {
     void testCalculateAdvStatisticsMethod() {
         //Given
         StatisticsCalculator statCalc = new StatisticsCalculator(statisticsMock);
-        Statistics statisticsMock = mock(Statistics.class);
 
         //When
         statCalc.calculateAdvStatistics(statisticsMock);
@@ -69,7 +67,6 @@ public class ForumStatisticsTestSuite {
     void testCalculateAdvStatistics0Posts() {
         //Given
         StatisticsCalculator statCalc = new StatisticsCalculator(statisticsMock);
-        Statistics statistics = mock(Statistics.class);
 
         when(statisticsMock.usersNames()).thenReturn(generateListOfNUserNames(100));
 
@@ -88,7 +85,6 @@ public class ForumStatisticsTestSuite {
     void testCalculateAdvStatistics1000Posts() {
         //Given
         StatisticsCalculator statCalc = new StatisticsCalculator(statisticsMock);
-        Statistics statistics = mock(Statistics.class);
 
         when(statisticsMock.usersNames()).thenReturn(generateListOfNUserNames(100));
         when(statisticsMock.postsCount()).thenReturn(1000);
@@ -108,7 +104,6 @@ public class ForumStatisticsTestSuite {
     void testCalculateAdvStatistics0Comments() {
         //Given
         StatisticsCalculator statCalc = new StatisticsCalculator(statisticsMock);
-        Statistics statistics = mock(Statistics.class);
 
         //when(statisticsMock.usersNames()).thenReturn(generateListOfNUserNames(100));
         when(statisticsMock.postsCount()).thenReturn(1000);
@@ -129,7 +124,6 @@ public class ForumStatisticsTestSuite {
     void testCalculateAdvStatisticsCommentsSmallerThanPosts() {
         //Given
         StatisticsCalculator statCalc = new StatisticsCalculator(statisticsMock);
-        Statistics statistics = mock(Statistics.class);
 
         when(statisticsMock.postsCount()).thenReturn(1000);
         when(statisticsMock.commentsCount()).thenReturn(100);
@@ -150,7 +144,6 @@ public class ForumStatisticsTestSuite {
     void testCalculateAdvStatisticsCommentsLargerThanPosts() {
         //Given
         StatisticsCalculator statCalc = new StatisticsCalculator(statisticsMock);
-        Statistics statistics = mock(Statistics.class);
 
         when(statisticsMock.postsCount()).thenReturn(100);
         when(statisticsMock.commentsCount()).thenReturn(1000);
@@ -171,7 +164,6 @@ public class ForumStatisticsTestSuite {
     void testCalculateAdvStatistics0Users() {
         //Given
         StatisticsCalculator statCalc = new StatisticsCalculator(statisticsMock);
-        Statistics statistics = mock(Statistics.class);
 
         when(statisticsMock.postsCount()).thenReturn(100);
         when(statisticsMock.commentsCount()).thenReturn(500);
@@ -192,7 +184,6 @@ public class ForumStatisticsTestSuite {
     void testCalculateAdvStatistics100Users() {
         //Given
         StatisticsCalculator statCalc = new StatisticsCalculator(statisticsMock);
-        Statistics statistics = mock(Statistics.class);
 
         when(statisticsMock.usersNames()).thenReturn(generateListOfNUserNames(100));
         when(statisticsMock.postsCount()).thenReturn(250);
