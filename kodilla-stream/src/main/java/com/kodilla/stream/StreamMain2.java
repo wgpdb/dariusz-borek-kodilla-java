@@ -5,7 +5,7 @@ import com.kodilla.stream.iterate.NumbersGenerator;
 import com.kodilla.stream.lambda.*;
 import com.kodilla.stream.reference.FunctionalCalculator;
 
-public class StreamMain {
+public class StreamMain2 {
 
     public static void main(String[] args) {
 
@@ -46,10 +46,10 @@ public class StreamMain {
         //Poem Decorator
         PoemBeautifier poemBeautifier = new PoemBeautifier();
 
-        poemBeautifier.decorate("This is a poem...", (String poem) -> "ABC " + poem + " ABC");
-        poemBeautifier.decorate("This is a poem...", PoemBeautifier::toUpperCase);
-        poemBeautifier.decorate("THIS IS A POEM...", PoemBeautifier::toLowerCase);
-        poemBeautifier.decorate("This is a poem...", (String poem) -> "\ud83c\udf40 " + poem + " \ud83c\udf40");
+        poemBeautifier.beautify("This is a poem...", (String poem) -> "ABC " + poem + " ABC");
+        poemBeautifier.beautify("This is a poem...", PoemBeautifier::toUpperCase);
+        poemBeautifier.beautify("THIS IS A POEM...", PoemBeautifier::toLowerCase);
+        poemBeautifier.beautify("This is a poem...", (String poem) -> "\ud83c\udf40 " + poem + " \ud83c\udf40");
 
         //Stream
         System.out.println("Using Stream to generate even numbers from 1 to 20");
