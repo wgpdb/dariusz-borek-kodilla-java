@@ -2,7 +2,9 @@ package com.kodilla.stream.array;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import java.util.OptionalDouble;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class ArrayOperationsTestSuite {
 
@@ -16,6 +18,34 @@ public class ArrayOperationsTestSuite {
         ArrayOperations.getAverage(testNumbers);
 
         //Then
-        assertEquals(5, ArrayOperations.getAverage(testNumbers));
+        assertEquals(OptionalDouble.of(5), ArrayOperations.getAverage(testNumbers));
+    }
+
+    @Test
+    void testWhenArrayEmpty() {
+
+        //Given
+        int[] testNumbers = new int[]{};
+
+        //When
+        ArrayOperations.getAverage(testNumbers);
+
+        //Then
+        assertEquals(OptionalDouble.empty(), ArrayOperations.getAverage(testNumbers));
+    }
+
+    @Test
+    void testWhenArrayIsNull() {
+
+        //Given
+        int[] testNumbers = null;
+
+        //When
+
+        //Then
+        assertThrows(NullPointerException.class,
+                () -> {
+                    ArrayOperations.getAverage(testNumbers);
+                });
     }
 }
