@@ -54,4 +54,29 @@ public class WorldTestSuite {
         //Then
         assertEquals(new BigDecimal("3629000000"), world.getPopulation());
     }
+
+    @Test
+    void testGetPopulationWithoutCountries() {
+        //Given & When
+        Continent europe = new Continent("Europe");
+        Continent asia = new Continent("Asia");
+        Continent africa = new Continent("Africa");
+
+        World world = new World();
+        world.addContinent(europe);
+        world.addContinent(asia);
+        world.addContinent(africa);
+
+        //Then
+        assertEquals(new BigDecimal("0"), world.getPopulation());
+    }
+
+    @Test
+    void testGetPopulationWithoutContinents() {
+        //Given & When
+        World world = new World();
+
+        //Then
+        assertEquals(new BigDecimal("0"), world.getPopulation());
+    }
 }

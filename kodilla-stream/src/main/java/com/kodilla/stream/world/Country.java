@@ -17,7 +17,6 @@ public final class Country {
     }
 
     public BigDecimal getPopulation() {
-
         return population;
     }
 }
