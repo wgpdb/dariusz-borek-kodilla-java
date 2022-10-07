@@ -75,15 +75,4 @@ public class LibraryTestSuite {
                 .forEach(System.out::println);
         System.out.println("<< ==== Beans list ====");
     }
-
-
-
-
-
-
-
-
-
-
-
 }
